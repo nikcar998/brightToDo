@@ -13,7 +13,7 @@ function Introduction(){
     return (
         <View style={styles.introduction} >
         <Text style={styles.introductionText}> Welcome I will always offer you two 
-            jokes to smile every time you use this app. Use the button on the top-left corner
+            jokes to smile every time you use this app. Scroll from the left to the right
             to start using the notes. </Text>
       </View>
     )
@@ -21,15 +21,16 @@ function Introduction(){
 const styles = StyleSheet.create({
     introduction:{
       textAlign:'center',
-      margin:25,
-      backgroundColor:'white',
+      margin:20,
+      backgroundColor:'#f4511e',
       borderWidth:1,
       borderRadius:4,
       padding:10
     },
     introductionText:{
       textAlign:'center',
-      fontSize:18
+      fontSize:20,
+      color:'#fff',
     }
   });
   

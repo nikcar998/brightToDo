@@ -22,13 +22,13 @@ function HeaderBTD() {
   const styles = StyleSheet.create({
     headerStyle:{
         height:45,
-        backgroundColor:'orange',
-        flexDirection:'row',
-        justifyContent:'center',
-        alignItems:'flex-end'
+        backgroundColor:'#f4511e',
     },
     headerText:{
-        fontSize:25,
+      fontWeight: 'bold',
+      textAlign:'center',
+      fontSize:30,
+      color:'#fff'
     },
   });
   

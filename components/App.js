@@ -1,48 +1,38 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
 
+import 'react-native-gesture-handler';
 import React, {useState, useEffect} from 'react';
 import {
-  ImageBackground,
   StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  Image,
 } from 'react-native';
-import FunnyImg from "./FunnyImg/FunnyImg"
-import HeaderBTD from "./HeaderBTD/HeaderBTD"
-import Introduction from "./Introduction/Introduction"
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native'
+import Home from "./Home/HomeComponent/Home"
+import Notes from "./Notes/Notes"
+
+
+const Drawer = createDrawerNavigator();
+
+
 function App() {
 
   return (
-    <>
-    <ImageBackground style={styles.bckgrImg} imageStyle={styles.imag}
-          source={{
-            uri: 'https://images.template.net/wp-content/uploads/2017/06/Ruled-Graph-Paper.jpg',
+    <NavigationContainer>
+      <Drawer.Navigator 
+        initialRouteName="Home"
+        drawerStyle={styles.drawerSt}
+        drawerContentOptions={{activeTintColor: '#fff', 
+                                itemStyle: { marginVertical: 10 },
           }}>
-            <HeaderBTD />
-            <Introduction />
-            <FunnyImg />
-    </ImageBackground>
-    </>
+        <Drawer.Screen name="Home" component={Home} />
+        <Drawer.Screen name="Notes" component={Notes} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 };
 
 const styles = StyleSheet.create({
-  bckgrImg: {
-    justifyContent: "flex-start",
-    alignItems:'stretch',
-  },
-  imag:{
-    marginTop:-15,
-    height:900,
-    opacity:0.8
+  drawerSt:{
+    backgroundColor:'#f4511e'
   }
 });
 
